@@ -65,7 +65,8 @@ Supports DirectDraw Surface images (`*.dds`) in the following formats:
     @ref CompressedPixelFormat::Bc3RGBAUnorm, respectively
 -   DDS DXT10 in formats that correspond to the
     @m_class{m-doc-external} [DXGI_FORMAT](https://docs.microsoft.com/en-us/windows/win32/api/dxgiformat/ne-dxgiformat-dxgi_format)
-    mapping documented in @ref PixelFormat and @ref CompressedPixelFormat
+    mapping documented in @ref Magnum::PixelFormat "PixelFormat" and
+    @ref CompressedPixelFormat
     (searching for the DXGI format names works as well), with the following
     special cases:
 
@@ -101,8 +102,8 @@ the `MagnumPlugins` package in CMake and link to the
 `MagnumPlugins::DdsImporter` target. See @ref building-plugins,
 @ref cmake-plugins and @ref plugins for more information.
 
-@note Mipmaps are currently imported under separate image data ids. You may
-    access them via @ref image2D(UnsignedInt)/@ref image3D(UnsignedInt) which
+@note Mipmaps are currently imported under separate image data IDs. You may
+    access them via @ref image2D(UnsignedInt) / @ref image3D(UnsignedInt) which
     will return the n-th mip, a bigger n indicating a smaller mip.
 */
 class MAGNUM_DDSIMPORTER_EXPORT DdsImporter: public AbstractImporter {

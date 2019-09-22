@@ -280,6 +280,7 @@ struct DdsImporter::File {
 };
 
 std::size_t DdsImporter::File::addImageDataOffset(const Vector3i& dims, const std::size_t offset) {
+    /** @todo UGH NO, this needs block size queries */
     const std::size_t size = compressed ?
         (dims.z()*((dims.x() + 3)/4)*(((dims.y() + 3)/4))*((pixelFormat.compressed == CompressedPixelFormat::Bc1RGBAUnorm) ? 8 : 16)) :
         dims.product()*pixelSize(pixelFormat.uncompressed);
